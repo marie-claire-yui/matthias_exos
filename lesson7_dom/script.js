@@ -85,12 +85,6 @@ function changerText(){
     this.classList.add('green');
 }
 
-
-
-
-
-
-
 // text content et innerHTML
 
 let  madiv = document.getElementById('maDiv');
