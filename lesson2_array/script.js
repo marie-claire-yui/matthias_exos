@@ -42,7 +42,7 @@ var mesPoissons = ["perroquet", "anémone", "bleu", "trompette", "chirurgien"];
 enleves = mesPoissons.splice(2);// on retire les éléments à partir de l'indice 2 mesPoissons vaut ["perroquet", "anémone"] enleves vaut ["bleu", "trompette", "chirurgien"]
 
 let arrayNumber = [4, 74, 28, 12, 1]; // fait la somme de la valeur de chaque élément du ttableau
-arrayNumber.push(17); //ajoute 17 dans le tableau à la fin
+arrayNumber.push(17); //ajoute 17 dans le tableau à la fin et renvoit la taille du tableau
 
 let arrayNumber2 = [4, 74, 28, 12, 1, 17 , 8];
 arrayNumber.filter((number) => number > 10); // permet de filtrer les éléments d'un tableau, ici nous renvoie un autre tableau avec les valeurs  supérieurs à 10

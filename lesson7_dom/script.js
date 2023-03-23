@@ -71,8 +71,6 @@ document.addEventListener('DOMContentLoaded',function(){
 // objet monElement propriété classList et méthodes add etc
 
 
-
-
 // la variable this
 // dans un gestionnaire d'évènement, la variable this représente l'objet Dom qui a déclenché l'évènement
 
