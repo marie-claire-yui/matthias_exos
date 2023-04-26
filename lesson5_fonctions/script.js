@@ -92,3 +92,40 @@ function greeting (name = 'stranger') {
     return multiplyByNineFifths(celsius) + 32;
   };
   console.log(getFahrenheit(15)); // Returns 59
+
+
+  // functions expression
+  // in a function expression the name is usually omitted (anonymous function)
+  // a function expression is often stored in a variable to refer to it
+
+  const plantNeedsWater = function(day) {
+    if(day === 'Wednesday'){
+      return true;
+    } else {
+      return false;
+    }
+  };
+  plantNeedsWater('Tuesday'); // to invoke a function "expression variableName(argument)""
+  console.log(plantNeedsWater('Tuesday'));
+
+  // arrow function
+// we remove the function keyword and put directly the parameters() followed by => that points to the function body surrounded by {}
+// works "inside a structure" and cannot be called "outside"  
+const plantNeedsWaters = (day) => {
+    if (day === 'Wednesday') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+//concise body arrow functions
+  // arrow function ZERO parameters
+  const functionNameZeroParameters = () => {console.log("hello world")};
+  functionNameZeroParameters(); // prints hello world
+  
+  // arow with ONE parameters and single line block
+  // no need curly braces ()one parameter
+  // and no need {}, no need return because it is reffered as implicit return single line block
+  const plantNeedsWaterss = day => day === 'Wednesday' ? true :false;
+  console.log(plantNeedsWaterss('Wednesday')); //true
+

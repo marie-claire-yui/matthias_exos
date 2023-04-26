@@ -26,7 +26,6 @@ let titre ="jumanji", production ="universal studio", annee = 2017;
 
 
 
-jeux ="mario"; // remontée ou hoisting des variables
+jeux ="mario"; // remontée ou hoisting des variables (rq déconseillé)
 var jeux;
-
 console.log(jeux);

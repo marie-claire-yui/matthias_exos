@@ -1,5 +1,4 @@
-// déclaration et initialisation de Z tableaux
-
+// déclaration et initialisation de 2 tableaux
 let array3 = ["Javascript", "Php", "Python"];
 let array4 = ["Ruby", "Solidity"];
 
@@ -51,3 +50,13 @@ arrayNumber.sort();
 console.log(arrayNumber); //sans autre précision la méthode tri selon la dizaine
 arrayNumber.sort((a, b) => a - b); //le tri se fera par ordre croissant
 arrayNumber.sort((a, b) => b - a); // le tri se fera par ordre décroissant
+
+const nestedArr = [[1], [2, 3]];
+console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+
+//We can also change an item in an array using its index, with syntax like 
+myArray[0] = 'new string'; 
+
+// Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable. However, a variable declared with const cannot be reassigned. 
+// Arrays mutated inside of a function will keep that change even outside the function. 
