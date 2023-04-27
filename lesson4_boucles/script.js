@@ -1,5 +1,7 @@
 // boucles while
 
+//The syntax of a while loop is ideal when we don’t know in advance how many times the loop should run. 
+
 let age = window.prompt("Quel est votre âge?");
 // on demande à l'utilisateur de rentrer son âge, celui-ci sera stocké dans la variable âge
 while (isNaN(age)){
