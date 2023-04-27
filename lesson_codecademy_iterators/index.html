@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//similar to what we have to do when we want to iterate over, or loop through, an array.
+//built-in array methods which make looping easier called iteration methods
+//  Iterators are methods called on arrays to manipulate elements and return values.
+
+
+
+// .forEach()
+// will execute the same code for each element of an array.
+const artists = ['Picasso', 'Kahlo', 'Matisse', 'Utamaro'];
+artists.forEach(artist => {                                  //takes an argument of callback function
+  console.log(artist + ' is one of my favorite artists.');
+}); // loops through the array and executes the callback function for each element. During each execution, the current element is passed as an argument to the callback function.
+//return value for .forEach() will always be undefined.
+
+
+// .map()
+const numbers = [1, 2, 3, 4, 5];
+// takes an argument of a callback function and returns a new array
+const squareNumbers = numbers.map(number => {
+  return number * number;
+});
+console.log(squareNumbers); // note that numbers were not altered and the new array is squareNumbers 
+// another example of map
+const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+// Create the secretMessage array below
+const secretMessage = animals.map( e => e[0]);
+console.log(secretMessage.join(''));
+
+
+// .filter()
+// returns a new array of elements after filtering out certain elements from the original array
+// The callback function for the .filter() method should return true or false depending on the element that is passed to it. The elements that cause the callback function to return true are added to the new array
+const things = ['desk', 'chair', 5, 'backpack', 3.14, 100];
+const onlyNumbers = things.filter(thing => {
+  return typeof thing === 'number';
+});
+console.log(onlyNumbers);
+// atother example
+const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+const shortWords = words.filter(word => {
+  return word.length < 6;
+});
+
+
+
+
+    </script>
+</body>
+</html>
