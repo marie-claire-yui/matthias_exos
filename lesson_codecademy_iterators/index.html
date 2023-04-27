@@ -46,13 +46,42 @@ const onlyNumbers = things.filter(thing => {
   return typeof thing === 'number';
 });
 console.log(onlyNumbers);
-// atother example
+// another example
 const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
 const shortWords = words.filter(word => {
   return word.length < 6;
 });
 
+// .findIndex() Method
+// Calling .findIndex() on an array will return the index of the first element that evaluates to true in the callback function. 
+const jumbledNums = [123, 25, 78, 5, 9]; 
+const lessThanTen = jumbledNums.findIndex(num => {
+  return num < 10;
+});
+console.log(lessThanTen); // Output: 3 
+const greaterThan1000 = jumbledNums.findIndex(num => {
+  return num > 1000;
+});
+console.log(greaterThan1000); // Output: -1
+// If there isn’t a single element in the array that satisfies the condition in the callback, then .findIndex() will return -1
+//another example
+const animaux = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+const startsWithS = animaux.findIndex(el => {
+  return el[0] ==='s';
+});
+console.log(startsWithS); //3
 
+
+// .reduce() Method
+// returns a single value after iterating through the elements of an array, thereby reducing the array.
+const number = [1, 2, 4, 10];
+const summedNums = number.reduce((accumulator, currentValue) => { //The callback function has two parameters, accumulator and currentValue. The value of accumulator starts off as the value of the first element in the array and the currentValue starts as the second element. To see the value of accumulator and currentValue change, review the chart above. 
+  return accumulator + currentValue
+})
+console.log(summedNums); // Output: 17 (1+1=3,3+4=7,7+10=17)
+
+// other methods https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
+// All iterator methods take a callback function, which can be a pre-defined function, a function expression, or an arrow function.
 
 
     </script>
