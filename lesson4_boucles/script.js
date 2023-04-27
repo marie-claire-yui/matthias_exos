@@ -21,6 +21,17 @@ while (cpt <= 20){ // tant que la condition entre () est renvoie TRUE
 }
 
 
+//autre exemple de boucle while
+const cards = ['diamond', 'spade', 'heart', 'club'];
+let currentCard = "";
+while (currentCard !== "spade"){
+  currentCard = cards[Math.floor(Math.random() * 4)];
+  console.log(currentCard);
+}
+
+
+
+
 // boucles for
 
 // déclaration et initialisation de la variable, ici un tableau ou liste
@@ -40,3 +51,61 @@ console.log(liste[index]); // renvoi le message d'erreur index is not defined
 for (let counter = 3; counter >=0; counter--){
     console.log(counter);
   }
+
+
+
+
+  // Do... While 
+
+  //A do...while statement says to do a task once and then keep doing it until a specified condition is no longer met.
+// Note that the while and do...while loop are different! Unlike the while loop, do...while will run at least once whether or not the condition evaluates to true.
+
+// first example
+//the code block makes changes to the countString variable by appending the string form of the i variable to it. First, the code block after the do keyword is executed once. Then the condition is evaluated. If the condition evaluates to true, the block will execute again. The looping stops when the condition evaluates to false.
+let countString = '';
+let i = 0;
+ 
+do {
+  countString = countString + i;
+  i++;
+} while (i < 5);
+ 
+console.log(countString);
+
+
+// second example
+const firstMessage = 'I will print!';
+// A do while with a stopping condition that evaluates to false
+do {
+ console.log(firstMessage)
+} while (true === false);
+// will console.log I will print because the instruction is executed at least once before the test condition
+
+
+// the break keyword
+
+// allows programs to “break” out of the loop from within the loop’s block.
+// helpful when we’re looping through large data structures! With breaks, we can add test conditions besides the stopping condition, and exit the loop when they’re met.
+
+// example1:
+for (let i = 0; i < 99; i++) {
+    if (i > 2 ) {
+       break;
+    }
+    console.log('Banana.');
+  }
+   
+  console.log('Orange you glad I broke out the loop!');
+
+
+// exemple2:
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+
+// affiche tous les rappers de la liste en arretant la boucle lorsqu'on rencontre le rapper Notorious BIG
+for (let i = 0; i< rapperArray.length ; i++){
+  console.log(rapperArray[i]);
+  if (rapperArray[i] === 'Notorious B.I.G.' ){
+    break;
+  }
+}
+console.log("And if you don't know, now you know.");
