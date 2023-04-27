@@ -32,3 +32,9 @@ console.log(liste[index]); // renvoi le message d'erreur index is not defined
 // la variable liste  est déclaré avec let
 // la portée ou scope de let n'est utilisable que dans la structure dans laquelle elle a été déclarée
 // ici , utilisable que dans la boucle d'où le message d'erreur lorsqu'on appelle la variable à l'extérieure de la boucle
+
+
+// The loop below loops from 0 to 3. Edit it to loop backwards from 3 to 0
+for (let counter = 3; counter >=0; counter--){
+    console.log(counter);
+  }
