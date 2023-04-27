@@ -129,3 +129,29 @@ const plantNeedsWaters = (day) => {
   const plantNeedsWaterss = day => day === 'Wednesday' ? true :false;
   console.log(plantNeedsWaterss('Wednesday')); //true
 
+// high order functions (A higher-order function is a function that either accepts functions as parameters, returns a function, or both.)
+// we can assign functions to variables, and we can reassign them to new variables. 
+const announceThatIAmDoingImportantWork = () => {
+  console.log("I’m doing very important work!");
+};
+const busy = announceThatIAmDoingImportantWork;
+busy(); //busy is a variable that holds a reference to our original function. If we could look up the address in memory of busy and the address in memory of announceThatIAmDoingImportantWork they would point to the same place.
+console.log(busy.name); //console.log() the name property of the function we assigned to busy
+
+// functions as parameters = callback function
+
+const higherOrderFunc = param => {   // first function higher-order function higherOrderFunc that accepts a single parameter, param. Inside the body, param gets invoked using parentheses. And finally, a string is returned, telling us the name of the callback function that was passed in.
+  param();
+  return `I just invoked ${param.name} as a callback function!`
+}
+const anotherFunc = () => { // second function  aspires to be called inside the higher-order function.
+  return 'I\'m being invoked by the higher-order function!';
+}
+console.log(higherOrderFunc(anotherFunc)); // function1 with function2 as parameters Lastly, we invoke higherOrderFunc(), passing in anotherFunc as its argument, thus fulfilling its dreams of being called by the higher-order function
+
+// in this example we invoked higherOrderFunc() with an anonymous function, anonymous functions can be arguments too
+higherOrderFunc(() => {
+  for (let i = 0; i <= 10; i++){
+    console.log(i);
+  }
+});
