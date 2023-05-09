@@ -51,5 +51,27 @@ const robot = {
 
 
 //defining getters and setters in objects.
+// Getters are methods that get and return the internal properties of an object.
+//Il est parfois utile de créer une propriété qui renvoie une valeur dynamique calculée, ou de ne pas avoir recours à l'appel explicite d'une méthode pour 
+//renvoyer le statut d'une variable interne. En JavaScript, il est possible de faire cela en 
+//utilisant un accesseur. Il n'est pas possible d'avoir simultanément un accesseur assimilé à une propriété et d'avoir cette propriété initialisée à une valeur, 
+//mais il est possible d'utiliser un accesseur et un mutateur pour créer une sorte de pseudo-propriété.
+const person = {
+  _firstName: 'John',
+  _lastName: 'Doe',
+  get fullName() { // get keyword followed by a function.
+    if (this._firstName && this._lastName){ //We can access the calling object’s internal properties using this. In fullName, we’re accessing both this._firstName and this._lastName.
+      return `${this._firstName} ${this._lastName}`;
+    } else {
+      return 'Missing a first name or a last name.';
+    }
+  }
+}
+// To call the getter method: 
+console.log(person.fullName); // 'John Doe'  
+//In general, getter methods do not need to be called with a set of parentheses. Syntactically, it looks like we’re accessing a property.
+//properties cannot share the same name as the getter/setter function.  Calling the method will result in an infinite call stack error
+
+
 //creating factory functions.
 //using destructuring techniques.
