@@ -73,5 +73,113 @@ console.log(person.fullName); // 'John Doe'
 //properties cannot share the same name as the getter/setter function.  Calling the method will result in an infinite call stack error
 
 
+// setters methods
+// reassign values of existing properties within an object
+const person2 = {
+  _age: 37,
+  set age(newAge){ 
+    if (typeof newAge === 'number'){
+      this._age = newAge;
+    } else {
+      console.log('You must assign a number to age');
+    }
+  }
+};
+//Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like we’re reassigning the value of a property. 
+person.age = 40;// When we use the setter method, only values that are numbers will reassign this._age
+console.log(person._age); // Logs: 40
+person.age = '40'; // Logs: You must assign a number to age
+//Like getter methods, there are similar advantages to using setter methods that include checking input, performing actions on properties,
+//  and displaying a clear intention for how the object is supposed to be used. 
+
+
 //creating factory functions.
-//using destructuring techniques.
+//  create many instances of an object quickly using a foctory function
+// A factory function is a function that returns an object and can be reused to make multiple object instances. 
+// Factory functions can also have parameters allowing us to customize the object that gets returned.
+const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};
+// In the monsterFactory function above, it has four parameters and returns an object that has the properties: name, age, energySource, and scare().
+// To make an object that represents a specific monster like a ghost, we can call monsterFactory with the necessary arguments and assign the return value to a variable
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+//With monsterFactory in place, we don’t have to create an object literal every time we need a new monster. Instead, we can invoke the monsterFactory function with the necessary arguments
+
+
+// Property Value Shorthand using destructuring techniques.
+const monsterFactoryD = (name, age, energySource, catchPhrase) => {
+  return { 
+    name,
+    age, 
+    energySource
+  }
+}; // equivalent de monsterFactory sans la méthode scare()
+
+
+// destructured assignment
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+// extraction of the residence property as a variable
+const name = vampire.name; 
+console.log(name); // Prints 'Transylvania' 
+// or we create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object. 
+const { residence } = vampire; 
+console.log(residence); // Prints 'Transylvania'
+// We can even use destructured assignment to grab nested properties of an object:
+const { day } = vampire.preferences; 
+console.log(day); // Prints 'stay inside'
+
+// other example of destructured Assignment
+const robot1 = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  }
+};
+const { functionality } = robot1;
+functionality.beep();
+
+
+// Built-in Object Methods
+//  MDN’s object instance documentation. 
+const robot2 = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+
+// What is missing in the following method call?
+const robotKeys = Object.keys(robot2);
+
+console.log(robotKeys);
+
+// Declare robotEntries below this line:
+const robotEntries = Object.entries(robot2);
+console.log(robotEntries);
+
+// Declare newRobot below this line:
+const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot2); //Declare a const variable named newRobot. newRobot will be a new object that has all the properties of robot and the properties in the following object: {laserBlaster: true, voiceRecognition: true}
+console.log(newRobot);
+
